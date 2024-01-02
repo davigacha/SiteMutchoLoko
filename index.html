@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botão Interativo</title>
+  <style>
+    body {
+      background: linear-gradient(to right, navy, #8B0000);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #interactive-button {
+      background-color: #87CEEB;
+      border: none;
+      border-radius: 15px;
+      color: white;
+      font-family: 'Satisfy', cursive;
+      font-size: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #interactive-button:hover {
+      background-color: #00FFFF;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="interactive-button" onclick="handleButtonClick()">Clique Aqui</button>
+
+  <script>
+    let clickCount = 0;
+
+    function handleButtonClick() {
+      clickCount++;
+
+      if (clickCount >= 10) {
+        window.location.href = 'https://youtu.be/itJ_DJVKAW0?si=QunSw7xSrK34CuGF'; // Substitua com o link desejado
+      } else {
+        moveButton();
+      }
+    }
+
+    function moveButton() {
+      const button = document.getElementById('interactive-button');
+      const maxX = window.innerWidth - button.clientWidth;
+      const maxY = window.innerHeight - button.clientHeight;
+
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      button.style.position = 'absolute';
+      button.style.left = randomX + 'px';
+      button.style.top = randomY + 'px';
+    }
+  </script>
+</body>
+
+</html>

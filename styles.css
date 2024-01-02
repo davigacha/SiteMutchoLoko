@@ -1,0 +1,29 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Bebas Neue', cursive;
+  background: linear-gradient(to right, navy, #800000); /* Adiciona o degradê ao fundo */
+}
+
+button {
+  border: none;
+  border-radius: 20%;
+  padding: 15px;
+  background-color: lightblue;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+button:hover {
+  background-color: lightgreen;
+}
+
+button.clicked {
+  position: absolute;
+  top: calc(50% + 50px);
+  left: calc(50% + 50px);
+  transform: translate(-50%, -50%);
+}
